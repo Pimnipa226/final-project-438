@@ -1,0 +1,19 @@
+Brief summary of technical challenges encountered:
+I encountered the challenge when I was not sure that how many pages I want to implement and
+how many component I have to create.
+
+
+Description of solutions implemented or planned:
+I had to go back and prioritize which pages are most necessary and I referred to
+my wireframes and try to create the components of the parts that will be on all
+pages.
+
+
+Documentation of any changes from original proposal:
+I did not change anything yet from the original proposal.
+
+Questions or areas where instructor guidance is needed:
+I have some questions about using Gemini AI for information when users prompt
+
+AI use statement (even if no AI was used). Include the prompts you used and the help you received:
+
