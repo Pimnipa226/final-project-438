@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import NavBar from "../../components/navbar/NavBar.jsx";
 //import { loginUser } from "../../services/Auth.js";
 import "./login.css";
@@ -38,16 +39,15 @@ const Login = () => {
     <div>
         <NavBar />
         <div className="login-content">
+
+        <div className="auth-container">
             <h1>Welcome!</h1>
             <p className="web-app-description">
                 Goalify is an app designed to help UW students manage their goals more effectively.
                 Powered by AI, Goalify guides students by helping them break big goals into daily actionable tasks, stay organized, and build consistent habits.
                 The app provides personalized recommendations, progress tracking, and reminders to keep students motivated throughout the quarter.
             </p>
-        </div>
 
-
-        <div className="auth-container">
             <div className="auth-form-container">
                 <h2>Log In</h2>
                 {error && <div className="auth-error">{error}</div>}
@@ -82,13 +82,15 @@ const Login = () => {
                     >
                         Log In
                     </button>
-
+                    <p>Don't have Goalify account yet?</p>
+                    <Link to="/signup">Sign Up</Link>
                 </form>
 
                 {/*<div className="auth-link">*/}
                 {/*    Don't have an account? <Link to="/register">Sign Up</Link>*/}
                 {/*</div>*/}
             </div>
+        </div>
         </div>
     </div>
     );

@@ -1,9 +1,20 @@
+import React from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { registerUser } from "../../services/auth";
 import "./sign-up.css";
+import NavBar from "../../components/navbar/NavBar.jsx";
 
-const Register = () => {
+
+// const SignUp = () => {
+//     return (
+//         <div className="sign-up">
+//             <p>Sign up here!</p>
+//         </div>
+//     )
+// };
+
+const SignUp = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
@@ -28,7 +39,6 @@ const Register = () => {
         }
 
         setLoading(true);
-
         try {
             const { user, error } = await registerUser(email, password);
 
@@ -38,7 +48,7 @@ const Register = () => {
             }
 
             // Redirect to dashboard on successful registration
-            navigate("/dashboard");
+            navigate("/homepage");
         } catch (err) {
             setError("Failed to create an account. Please try again.");
         } finally {
@@ -47,12 +57,23 @@ const Register = () => {
     };
 
     return (
+        <div>
+            <NavBar />
+        <div className="signup-content">
+            <h1>Welcome!</h1>
+            <p className="web-app-description">
+                Goalify is an app designed to help UW students manage their goals more effectively.
+                Powered by AI, Goalify guides students by helping them break big goals into daily actionable tasks, stay organized, and build consistent habits.
+                The app provides personalized recommendations, progress tracking, and reminders to keep students motivated throughout the quarter.
+            </p>
+        </div>
         <div className="auth-container">
             <div className="auth-form-container">
                 <h2>Create Account</h2>
-                {error && <div className="auth-error">{error}</div>}
+                {/*{error && <div className="auth-error">{error}</div>}*/}
 
-                <form onSubmit={handleSubmit} className="auth-form">
+                {/*<form onSubmit={handleSubmit} className="auth-form">*/}
+                <form className="auth-form">
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
                         <input
@@ -89,21 +110,23 @@ const Register = () => {
                     <button
                         type="submit"
                         className="auth-button"
-                        disabled={loading}
+                        // disabled={loading}
                     >
                         {loading ? "Creating account..." : "Sign Up"}
+                        Sign Up
                     </button>
+                    <p>Already have Goalify account?</p>
+                    <Link to="/">Log In</Link>
                 </form>
 
-                <div className="auth-link">
-                    Already have an account? <Link to="/login">Log In</Link>
-                </div>
+                {/*<div className="auth-link">*/}
+                {/*    Already have an account? <Link to="/login">Log In</Link>*/}
+                {/*</div>*/}
             </div>
+        </div>
         </div>
     );
 };
 
-export default Register;
+export default SignUp;
 
-
-//

@@ -1,59 +1,59 @@
 //Call API
 import React, { useState } from 'react';
+import { useEffect } from 'react';
+import { GoogleGenAI } from "@google/genai";
+import { z } from "zod";
+import { zodToJsonSchema } from "zod-to-json-schema";
 
+//import arrowUp from '../assets/arrow-up.webp';
+import './ChatBot.css';
+
+
+const ai = new GoogleGenAI({ apiKey: "AIzaSyD11Y8zBTwCe861d1Gv7O3hGAUDKi6_vcE" });
 function ChatBot() {
+
     const [input, setInput] = useState('');
-    const [messages, setMessages] = useState([]);
+    //input: stores whatever the user types
+    //setInput(): updates input when the user types
+    //useState(''): initializes input as an empty string
 
-    async function generateAI(prompt) {
-        const response = await fetch("http://localhost:3001/api/generate", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ prompt })
-        });
 
-        const data = await response.json();
-        return data.text;
+    const [callAPI, setCallAPI] = useState(false);
+    //default state is false
+
+
+        const callGemini = async () => {
+            try {
+                const response = await ai.models.generateContent({
+                    model: "gemini-2.5-flash",
+                    contents: input,
+                });
+                console.log(response.text);
+                let myDiv = document.getElementById('responseTextID');
+                myDiv.innerHTML = response.text;
+            }
+
+            catch (error) {
+                console.log(error);
+            }
+        }
+
+    const onClick = () => {
+        console.log("User input:", input);
+        //if (!input) return;
+        setCallAPI(true);
     }
-
-    async function handleSend() {
-        if (!input.trim()) return;
-
-        setMessages(prev => [...prev, { role: "user", content: input }]);
-
-        const aiText = await generateAI(input);
-
-        setMessages(prev => [...prev, { role: "assistant", content: aiText }]);
-
-        setInput("");
-    }
+// SHOW RESPONSE IN CHAT WINDOW LATER
 
 
-return (
-    <div className="chat-container">
-        <p>AI Assistance</p>
-        <div className="chat">
-            {messages.map((msg, i) => (
-
-                <div
-                    key={i}
-                    className={msg.role === "user" ? "user-msg" : "ai-msg"}
-                >
-                    {msg.content}
-                </div>
-            ))}
+    return (
+        <div className="chatbot-placeholder">
+            <div id="responseTextID"></div>
+            <input className="chat-input" type="text" onChange={(e) => setInput(e.target.value)} value={input} placeholder="Type your message..." />
+            {/*<button className="send-button" onClick={onClick}><img src={arrowUp} alt="send"/></button>*/}
+            <button className="send-button" onClick={callGemini}>Send</button>
         </div>
-
-        <div className="input-area">
-            <input
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                placeholder="Ask something..."
-            />
-            <button onClick={handleSend}>Send</button>
-        </div>
-    </div>
-);
+    );
 }
 
 export default ChatBot;

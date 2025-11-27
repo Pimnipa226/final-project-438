@@ -1,60 +1,75 @@
-.chat-container {
+.chat-section {
     display: flex;
     flex-direction: column;
     max-width: 400px;
-    height: 500px;
+    height: 250px;
     border: 1px solid #ccc;
     border-radius: 10px;
     overflow: hidden;
+    background-color: #72BFB8;
 }
 
-.chat {
-    flex: 1;
-    padding: 10px;
-    overflow-y: auto;
-    background-color: #f5f5f5;
-}
 
-.user-msg {
-    text-align: right;
-    background-color: #2463A9;
-    color: white;
-    padding: 6px 10px;
-    border-radius: 8px;
-    margin-bottom: 6px;
-    max-width: 80%;
-}
 
-.ai-msg {
-    text-align: left;
-    background-color: #e5e5e5;
-    color: black;
-    padding: 6px 10px;
-    border-radius: 8px;
-    margin-bottom: 6px;
-    max-width: 80%;
-}
 
-.input-area {
-    display: flex;
-    border-top: 1px solid #ccc;
-}
+/*.chat-container {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    max-width: 400px;*/
+/*    height: 500px;*/
+/*    border: 1px solid #ccc;*/
+/*    border-radius: 10px;*/
+/*    overflow: hidden;*/
+/*    background-color: #72BFB8;*/
+/*}*/
 
-.input-area input {
-    flex: 1;
-    padding: 8px;
-    border: none;
-    outline: none;
-}
+/*.chat {*/
+/*    flex: 1;*/
+/*    padding: 10px;*/
+/*    overflow-y: auto;*/
+/*    background-color: #f5f5f5;*/
+/*}*/
 
-.input-area button {
-    padding: 8px 16px;
-    background-color: #2463A9;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
+/*.user-msg {*/
+/*    text-align: right;*/
+/*    background-color: #2463A9;*/
+/*    color: white;*/
+/*    padding: 6px 10px;*/
+/*    border-radius: 8px;*/
+/*    margin-bottom: 6px;*/
+/*    max-width: 80%;*/
+/*}*/
 
-.input-area button:hover {
-    background-color: #1b4d7a;
-}
+/*.ai-msg {*/
+/*    text-align: left;*/
+/*    background-color: #e5e5e5;*/
+/*    color: black;*/
+/*    padding: 6px 10px;*/
+/*    border-radius: 8px;*/
+/*    margin-bottom: 6px;*/
+/*    max-width: 80%;*/
+/*}*/
+
+/*.input-area {*/
+/*    display: flex;*/
+/*    border-top: 1px solid #ccc;*/
+/*}*/
+
+/*.input-area input {*/
+/*    flex: 1;*/
+/*    padding: 8px;*/
+/*    border: none;*/
+/*    outline: none;*/
+/*}*/
+
+/*.input-area button {*/
+/*    padding: 8px 16px;*/
+/*    background-color: #2463A9;*/
+/*    color: white;*/
+/*    border: none;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*.input-area button:hover {*/
+/*    background-color: #1b4d7a;*/
+/*}*/

@@ -1,9 +1,23 @@
-.homepage {
+.home {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: #F0F2F5;
+}
+.homepage {
+    display: grid;
+    grid-column: 1;
+    grid-row: 1;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 1000px;
+    width: 800px;
+    background-color: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 10px;
 }
 
 
@@ -11,4 +25,68 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.home-content h1 {
+    font-family: 'Malayalam Sangam MN', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.weekly-calendar-section {
+    margin-top: 20px;
+    width: 300px;
+    height: 100px;
+    border: 2px solid #E5E5E5;
+    border-radius: 8px;
+    background-color: #F9F9F9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.tasks-section {
+    margin-top: 20px;
+    width: 500px;
+    height: 400px;
+    /*border: 2px solid #E5E5E5;*/
+    border-radius: 20px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*.monthly-calendar-section {*/
+/*    margin-top: 20px;*/
+/*    grid-column: 2;*/
+/*    grid-row: 1;*/
+/*    width: 600px;*/
+/*    height: 400px;*/
+/*    border: 2px solid #E5E5E5;*/
+/*    border-radius: 8px;*/
+/*    background-color: #F9F9F9;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*}*/
+
+.chat-section {
+    margin-top: 20px;
+    grid-column: 2;
+    grid-row: 1;
+    width: 600px;
+    height: 600px;
+    border: 2px solid #E5E5E5;
+    border-radius: 8px;
+    background-color: #F9F9F9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
