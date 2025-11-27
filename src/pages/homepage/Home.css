@@ -7,7 +7,7 @@
     background-color: #F0F2F5;
 }
 .homepage {
-    display: grid;
+    display: flex;
     grid-column: 1;
     grid-row: 1;
     flex-direction: column;
