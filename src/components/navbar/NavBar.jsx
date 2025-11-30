@@ -3,8 +3,13 @@ import React from 'react';
 //import { logoutUser } from "../../services/auth";
 import { Link } from 'react-router-dom';
 import './NavBar.css';
+import { auth } from "../../services/firebase.js";
+import { signOut } from "firebase/auth";
 
-function NavBar () {
+function NavBar ({user}) {
+    const handleSignOut = () => {
+        signOut(auth);
+    };
 
 //     return (
 //         <p>NavBar</p>
@@ -30,7 +35,7 @@ function NavBar () {
                 {/*    <>*/}
                         <Link to="/homepage" className="navbar-item">Home</Link>
                         <Link to="/profile" className="navbar-item">Profile</Link>
-                        {/*<button onClick={handleLogout} className="navbar-button">Logout</button>*/}
+                        <button onClick={handleSignOut} className="navbar-button">Logout</button>
                     {/*</>*/}
                 {/*) : (*/}
                 {/*    <>*/}

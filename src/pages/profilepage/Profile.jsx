@@ -21,7 +21,6 @@ const Profile = () => {
         //         <button>View Progress</button>
         //     </div>
 <div className="profile-content">
-    <NavBar/>
             <div className="user-info">
                 <img src="https://via.placeholder.com/150" alt="Profile" />
                 <h2>User Name</h2>
@@ -30,23 +29,23 @@ const Profile = () => {
                 <button className="sign-out-button">Sign out</button>
             </div>
 
-            <div className="progress-content">
-                <p className="heading">Achievements and Progress</p>
-                <div className="progress-bars">
-                    <div className="progress-bar">
-                        <span>Task Completed</span>
-                        <div className="bar">
-                            75%
-                        </div>
-                    </div>
-                    <div className="progress-bar">
-                        <span>Goal Achievement</span>
-                        <div className="bar">
-                            75%
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {/*<div className="progress-content">*/}
+            {/*    <p className="heading">Achievements and Progress</p>*/}
+            {/*    <div className="progress-bars">*/}
+            {/*        <div className="progress-bar">*/}
+            {/*            <span>Task Completed</span>*/}
+            {/*            <div className="bar">*/}
+            {/*                75%*/}
+            {/*            </div>*/}
+            {/*        </div>*/}
+            {/*        <div className="progress-bar">*/}
+            {/*            <span>Goal Achievement</span>*/}
+            {/*            <div className="bar">*/}
+            {/*                75%*/}
+            {/*            </div>*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
 </div>
 
 

@@ -32,7 +32,9 @@ function ChatBot() {
             try {
                 const response = await ai.models.generateContent({
                     model: "gemini-2.5-flash",
-                    contents: "For the following. only give me enumerated list of to-dos and subtasks for a todo item. Do not respond if unrelated questions are asked. Respond in plaintext only.:" + input,
+                    contents: "For the following. only give me enumerated list of to-dos and subtasks for a todo item. Do not respond if unrelated questions are asked. " +
+                        "Respond in plaintext only do not use 1.,2.,3. just use Day1:, Day2: format. " +
+                        "And when each day start then start the new line:" + input,
                 });
 
                 const cleaned = cleanResponse(response.text);
@@ -53,17 +55,20 @@ function ChatBot() {
     const onClick = () => {
         console.log("User input:", input);
         //if (!input) return;
-        setCallAPI(true);
+            setCallAPI(true);
     }
 // SHOW RESPONSE IN CHAT WINDOW LATER
 
 
     return (
         <div className="chatbot-placeholder">
-            <div id="responseTextID"></div>
+            <p className="chat-with-assistant">Chat with AI Assistant</p>
+            <div id="responseTextID">{/* chat messages */}</div>
+            <div className="input-message">
             <input className="chat-input" type="text" onChange={(e) => setInput(e.target.value)} value={input} placeholder="Type your message..." />
             {/*<button className="send-button" onClick={onClick}><img src={arrowUp} alt="send"/></button>*/}
             <button className="send-button" onClick={callGemini}>Send</button>
+            </div>
         </div>
     );
 }

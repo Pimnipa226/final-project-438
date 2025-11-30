@@ -1,125 +1,122 @@
-.profile-content {
+.task-goal-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    background-color: #F6F7FA;
-    min-height: 100vh;
+    /*padding: 200px;*/
+    font-family: Malayalam Sangam MN, sans-serif;
+    background-color: #FFFFFF;
+    /*min-height: 100vh;*/
+    border-radius: 10px;
+    border: 1px solid #E5E5E5;
 }
 
-.user-info {
+.calendar-styling {
+    font-family: Malayalam Sangam MN, sans-serif;
     margin: 20px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
     background-color: #FFFFFF;
+    width: 600px;
     max-width: 1000px;
-    width: 100%;
 }
-
-.progress-content {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #FFFFFF;
-    max-width: 1000px;
-    width: 100%;
+.h2 {
+    font-family: Malayalam Sangam MN, sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #000000;
 }
-
-.heading {
-    height: 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    margin-bottom: 12px;
+.add-task-text {
+    font-family: Malayalam Sangam MN, sans-serif;
+    font-size: 20px;
+    margin-bottom: 10px;
     color: #2463A9;
-    margin-top: 20px;
-    border-radius: 15px;
-}
-.task-goal-list {
-    background-color: #FFFFFF;
-    padding: 16px;
-    border-radius: 10px;
-    max-width: 1000px;
 }
 
-.goal-item {
-    width: 100%;
-    font-size: 1.1rem;
-    color: #000000;
-    margin-bottom: 8px;
-    background-color: #F9FAFC;
-    padding: 10px 20px;
+/*.add-section {*/
+/*    background-color: #F9FAFC;*/
+/*    border-radius: 20px;*/
+/*}*/
+
+.input-field {
+    width: 300px;
+    height: 30px;
+    padding: 0px 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
     border-radius: 20px;
-    text-align: left;
+    font-size: 16px;
 }
 
-.task-item {
-    width: 100%;
-    font-size: 1.1rem;
-    color: #000000;
-    margin-bottom: 8px;
-    background-color: #F9FAFC;
-    padding: 10px 20px;
+
+.add-section, .add-goal-section {
+    display: flex;           /* put input + button in a row */
+    align-items: center;     /* vertical alignment */
+    gap: 5px;               /* space between input and button */
+}
+
+.input-field, .input-field2, .input-field3 {
+    flex: 1;                 /* input grows to fill remaining space */
+    height: 40px;            /* same height as button */
     border-radius: 20px;
-    text-align: left;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
 
-.task-list {
-    list-style: none;   /* removes bullet points */
-    padding: 0;
-    margin: 0;
+.plus-button {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;       /* perfect circle */
+    background-color: #2463A9;
+    color: white;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+
+    display: flex;            /* center + inside */
+    align-items: center;      /* vertical center */
+    justify-content: center;  /* horizontal center */
+
+    padding: 0 !important;    /* remove default padding */
+    box-sizing: border-box;
+}
+.checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border-radius: 20px;
 }
 
-/*.tabs {*/
-/*    display: flex;*/
-/*    gap: 10px;*/
-/*    margin-bottom: 12px;*/
-/*}*/
-
-/*.tabs button {*/
-/*    flex: 1;*/
-/*    padding: 8px 12px;*/
-/*    background-color: #e5e5e5;*/
-/*    border: none;*/
-/*    border-radius: 6px;*/
-/*    cursor: pointer;*/
-/*    font-weight: bold;*/
-/*    transition: background-color 0.2s ease;*/
-/*}*/
-
-/*.tabs button:hover {*/
-/*    background-color: #d0d0d0;*/
-/*}*/
-
-/*.tabs button.active {*/
-/*    background-color: #2463A9;*/
-/*    color: white;*/
-/*}*/
+h4 {
+    font-family: Malayalam Sangam MN, sans-serif;
+    font-size: 18px;
+    margin: 10px 0;
+    color: #000000;
+}
 
 
-/*.task-goal-list ul {*/
-/*    list-style: none;*/
-/*    padding: 0;*/
-/*    margin: 0;*/
-/*}*/
-
-/*.task-goal-list li {*/
-/*    padding: 10px 12px;*/
-/*    margin-bottom: 8px;*/
-/*    background-color: #ffffff;*/
-/*    border-radius: 6px;*/
-/*    display: flex;*/
-/*    justify-content: space-between;*/
-/*    align-items: center;*/
-/*    box-shadow: 0 1px 3px rgba(0,0,0,0.1);*/
-/*    font-size: 1rem;*/
-/*}*/
+hr {
+    border: none;           /* remove default border */
+    height: 2px;            /* thickness of the line */
+    background-color: #000000; /* color of the line */
+    margin: 20px 0;         /* space above and below */
+}
 
 
-/*.task-goal-list li span {*/
-/*    font-size: 0.8rem;*/
-/*    color: #666666;*/
-/*    font-style: italic;*/
-/*}*/
+.input-field2 {
+    width: 250px;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+}
+
+.input-field3 {
+    width: 125px;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+}

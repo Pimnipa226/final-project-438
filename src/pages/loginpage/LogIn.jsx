@@ -3,8 +3,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import NavBar from "../../components/navbar/NavBar.jsx";
-//import { loginUser } from "../../services/Auth.js";
 import "./login.css";
+import {signInWithEmailAndPassword} from "firebase/auth";
+import {auth} from "../../services/firebase.js";
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -13,47 +14,35 @@ const Login = () => {
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
-    const handleSubmit = async (e) => {
+    const handleSignIn = async (e) => {
         e.preventDefault();
-        setError("");
-        setLoading(true);
-
         try {
-            const { user, error } = await loginUser(email, password);
-
-            if (error) {
-                setError(error);
-                return;
-            }
-
-            // Redirect to dashboard on successful login
-            navigate("/dashboard");
+            await signInWithEmailAndPassword(auth, email, password);
+            navigate("/");
         } catch (err) {
-            setError("Failed to log in. Please try again.");
-        } finally {
-            setLoading(false);
+            setError(err.message);
         }
-    };
+    }
 
     return (
     <div>
-        <NavBar />
         <div className="login-content">
 
         <div className="auth-container">
-            <h1>Welcome!</h1>
-            <p className="web-app-description">
-                Goalify is an app designed to help UW students manage their goals more effectively.
-                Powered by AI, Goalify guides students by helping them break big goals into daily actionable tasks, stay organized, and build consistent habits.
-                The app provides personalized recommendations, progress tracking, and reminders to keep students motivated throughout the quarter.
-            </p>
+            <div className="welcome">
+                <h1>Welcome!</h1>
+            </div>
+            <div className="web-app-description">
+                    Goalify is an app designed to help UW students manage their goals more effectively.
+                    Powered by AI, Goalify guides students by helping them break big goals into daily actionable tasks, stay organized, and build consistent habits.
+                    The app provides personalized recommendations, progress tracking, and reminders to keep students motivated throughout the quarter.
+            </div>
 
             <div className="auth-form-container">
                 <h2>Log In</h2>
                 {error && <div className="auth-error">{error}</div>}
 
-                {/*<form onSubmit={handleSubmit} className="auth-form">*/}
-                <form className="auth-form">
+                <form onSubmit={handleSignIn} className="auth-form">
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
                         <input className="email-input-field"
@@ -82,13 +71,11 @@ const Login = () => {
                     >
                         Log In
                     </button>
-                    <p>Don't have Goalify account yet?</p>
-                    <Link to="/signup">Sign Up</Link>
                 </form>
 
-                {/*<div className="auth-link">*/}
-                {/*    Don't have an account? <Link to="/register">Sign Up</Link>*/}
-                {/*</div>*/}
+                <div className="auth-link">
+                    Don't have an account? <Link to="/sign-up">Sign Up</Link>
+                </div>
             </div>
         </div>
         </div>

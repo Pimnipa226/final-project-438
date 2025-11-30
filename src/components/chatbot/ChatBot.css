@@ -3,14 +3,59 @@
     flex-direction: column;
     max-width: 400px;
     height: 250px;
-    border: 1px solid #ccc;
     border-radius: 10px;
     overflow: hidden;
     background-color: #72BFB8;
+    align-content: baseline;
+    place-content: end;
+    border: 1px solid #E5E5E5;
 }
 
 
+.chat-with-assistant {
+    font-family: Malayalam Sangam MN, sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #000000;
+}
 
+#responseTextID {
+    overflow-y: auto;
+    height: 345px;
+    padding: 10px;
+    color: #2463A9;
+
+}
+
+.input-message {
+    display: flex; /* put input + button on one line */
+    align-items: center; /* vertically align */
+    gap: 10px; /* space between input and button */
+    width: 100%;
+
+    .chat-input {
+        display: flex;
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        border: 1px solid #E5E5E5;
+        height: 35px;
+        width: 320px;
+        padding: 0px 10px;
+    }
+
+    .send-button {
+        width: 60px;
+        height: 35px;
+        background-color: #72BFB8;
+        border: none;
+        border-radius: 20px;
+        color: #2463A9;
+        cursor: pointer;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+}
 
 /*.chat-container {*/
 /*    display: flex;*/

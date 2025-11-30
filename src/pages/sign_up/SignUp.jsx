@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { registerUser } from "../../services/auth";
 import "./sign-up.css";
-import NavBar from "../../components/navbar/NavBar.jsx";
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../services/firebase.js';
 
 
 // const SignUp = () => {
@@ -22,43 +22,24 @@ const SignUp = () => {
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
-    const handleSubmit = async (e) => {
+    const handleSignUp = async (e) => {
         e.preventDefault();
-        setError("");
-
         // Validate password match
         if (password !== confirmPassword) {
             setError("Passwords do not match");
             return;
         }
-
-        // Validate password strength
-        if (password.length < 6) {
-            setError("Password must be at least 6 characters");
-            return;
-        }
-
-        setLoading(true);
         try {
-            const { user, error } = await registerUser(email, password);
-
-            if (error) {
-                setError(error);
-                return;
-            }
-
-            // Redirect to dashboard on successful registration
-            navigate("/homepage");
+            await createUserWithEmailAndPassword(auth, email, password);
+            navigate("/log-in");
         } catch (err) {
-            setError("Failed to create an account. Please try again.");
-        } finally {
-            setLoading(false);
+            setError(err.message);
         }
-    };
+    }
+
 
     return (
         <div>
-            <NavBar />
         <div className="signup-content">
             <h1>Welcome!</h1>
             <p className="web-app-description">
@@ -72,8 +53,7 @@ const SignUp = () => {
                 <h2>Create Account</h2>
                 {/*{error && <div className="auth-error">{error}</div>}*/}
 
-                {/*<form onSubmit={handleSubmit} className="auth-form">*/}
-                <form className="auth-form">
+                <form onSubmit={handleSignUp} className="auth-form">
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
                         <input
@@ -116,7 +96,7 @@ const SignUp = () => {
                         Sign Up
                     </button>
                     <p>Already have Goalify account?</p>
-                    <Link to="/">Log In</Link>
+                    <Link to="/log-in">Log In</Link>
                 </form>
 
                 {/*<div className="auth-link">*/}
