@@ -36,11 +36,14 @@ function ChatBot() {
                         "Respond in plaintext only do not use 1.,2.,3. just use Day1:, Day2: format. " +
                         "And when each day start then start the new line:" + input,
                 });
+                console.log("Raw response:", response.text);
 
-                const cleaned = cleanResponse(response.text);
+
+
+                //const cleaned = cleanResponse(response.text);
 
                 let myDiv = document.getElementById("responseTextID");
-                myDiv.textContent = cleaned;
+                myDiv.innerHTML = response.text;
 
                 // console.log(response.text);
                 // let myDiv = document.getElementById('responseTextID');
@@ -52,11 +55,6 @@ function ChatBot() {
             }
         }
 
-    const onClick = () => {
-        console.log("User input:", input);
-        //if (!input) return;
-            setCallAPI(true);
-    }
 // SHOW RESPONSE IN CHAT WINDOW LATER
 
 

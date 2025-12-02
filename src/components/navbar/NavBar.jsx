@@ -33,7 +33,7 @@ function NavBar ({user}) {
             <div className="navbar-menu">
                 {/*{currentUser ? (*/}
                 {/*    <>*/}
-                        <Link to="/homepage" className="navbar-item">Home</Link>
+                        <Link to="/" className="navbar-item">Home</Link>
                         <Link to="/profile" className="navbar-item">Profile</Link>
                         <button onClick={handleSignOut} className="navbar-button">Logout</button>
                     {/*</>*/}

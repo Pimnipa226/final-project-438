@@ -24,7 +24,8 @@
     height: 345px;
     padding: 10px;
     color: #2463A9;
-
+    white-space: pre-wrap;
+    text-align: left;
 }
 
 .input-message {

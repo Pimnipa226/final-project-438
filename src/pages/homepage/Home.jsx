@@ -5,13 +5,12 @@ import ChatBot from "../../components/chatbot/ChatBot.jsx";
 import "./Home.css"
 
 
-const Home = () => {
+const Home = ( {user} ) => {
     return (
         <div className="home">
-
             <div className="home-main">
                 <div className="tasks-section">
-                    <TaskGoalList />
+                    <TaskGoalList user={user} />
                 </div>
 
                 <div className="chat-section">
