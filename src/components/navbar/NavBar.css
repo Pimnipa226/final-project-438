@@ -52,7 +52,9 @@
     color: #1b4d7a;
 }
 
-
+button:focus, button:focus-visible {
+    outline: none!important;
+}
 
 .profile-button {
     padding: 6px 12px;

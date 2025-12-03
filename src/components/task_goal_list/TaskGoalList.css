@@ -60,13 +60,13 @@
 }
 
 .react-calendar__tile:hover {
-    background-color: #72BFB8 !important;
+    background-color: #91CFCE !important;
     color: white !important;
     border-radius: 8px;
 }
 
 .react-calendar__month-view__days__day:hover {
-    background-color: #72BFB8 !important;
+    background-color: #91CFCE !important;
     color: white !important;
 }
 
