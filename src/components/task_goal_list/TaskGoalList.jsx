@@ -154,7 +154,9 @@ function TaskGoalCalendar({ user }) {
 
     return (
         <div className="task-goal-container">
+            <div className="welcome-back-container">
             <h1>Welcome back!</h1>
+            </div>
 
             <Calendar
                 className="calendar-styling"
@@ -163,10 +165,10 @@ function TaskGoalCalendar({ user }) {
                 tileClassName={tileClassName}
             />
 
-            <h2>{selectedDate.toDateString()}</h2>
+            {/*<h2>{selectedDate.toDateString()}</h2>*/}
 
             {/* Add tasks */}
-            <h4>Tasks</h4>
+            <h4>Task</h4>
             <div className="add-section">
                 <input
                     className="input-field"
@@ -201,10 +203,10 @@ function TaskGoalCalendar({ user }) {
                 ))
             )}
 
-            <hr />
+            <hr className="section-divider" />
 
             {/* Add goals */}
-            <h3>Add Goal</h3>
+            <h3>Goal</h3>
             <div className="add-goal-section">
                 <input
                     className="input-field2"
@@ -221,14 +223,16 @@ function TaskGoalCalendar({ user }) {
                 <button className="plus-button" onClick={saveGoal}>+</button>
             </div>
 
-            <h4>Current Goals</h4>
+            <h5>Current Goals</h5>
             {currentGoal.length === 0 ? (
                 <p>No current goals</p>
             ) : (
                 currentGoal.map(g => (
+                    <div className="goal-item-container">
                     <div key={g.id} className="goal-item">
                         <span>{g.goalInput}</span>
                         <small>Due: {g.dueDate}</small>
+                    </div>
                     </div>
                 ))
             )}

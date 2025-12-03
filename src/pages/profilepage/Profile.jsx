@@ -56,7 +56,8 @@ const Profile = ({ user }) => {
             {/* Current goals */}
             <div className="total-goals">
                 <div className="current-goal">
-                    <span>Current Goals</span>
+                    <h1>Current Goals</h1>
+                    <div className="goal-list-container">
                     <div className="goal-list">
                         {currentGoal.length > 0 ? (
                             <ol>
@@ -71,11 +72,16 @@ const Profile = ({ user }) => {
                             <p>No current goal.</p>
                         )}
                     </div>
+                    </div>
                 </div>
+
+                <hr className="current-and-past-divider" />
+
                 {/* Past goals */}
                 <div className="past-goal">
-                    <span>Past Goals</span>
+                    <h2>Past Goals</h2>
                     <div className="goal-list">
+
                         {pastGoal.length > 0 ? (
                             <ol>
                                 {pastGoal.map(goal => (

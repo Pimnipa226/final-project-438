@@ -1,13 +1,32 @@
 .task-goal-container {
     display: flex;
+    height: auto;
     flex-direction: column;
     align-items: center;
-    /*padding: 200px;*/
     font-family: Malayalam Sangam MN, sans-serif;
     background-color: #FFFFFF;
-    /*min-height: 100vh;*/
     border-radius: 10px;
     border: 1px solid #E5E5E5;
+}
+
+.welcome-back-container {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 4rem;
+}
+
+.task-goal-container h1 {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Noto Serif JP', sans-serif;
+    font-size: 28px;
+    color: #203648 ;
+    flex-wrap: wrap;
+    margin-bottom: 0px;
+    padding: 30px;
+    text-align: left;
 }
 
 .calendar-styling {
@@ -19,13 +38,77 @@
     background-color: #FFFFFF;
     width: 600px;
     max-width: 1000px;
+    display: flex;
+    flex-direction: column;
 }
-.h2 {
+.react-calendar__navigation__label {
+    font-size: 25px !important;
+    font-weight: bold;
+    color: #2463A9;
+    font-family: 'Julius Sans One', sans-serif;
+}
+
+.react-calendar__navigation button {
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #2463A9;
+    padding: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+    border-radius: 6px;
+}
+
+.react-calendar__tile:hover {
+    background-color: #72BFB8 !important;
+    color: white !important;
+    border-radius: 8px;
+}
+
+.react-calendar__month-view__days__day:hover {
+    background-color: #72BFB8 !important;
+    color: white !important;
+}
+
+.react-calendar__tile--active {
+    background-color: #2463A9 !important;
+    color: white !important;
+    border-radius: 8px;
+}
+
+.task-goal-container h4 {
     font-family: Malayalam Sangam MN, sans-serif;
     font-size: 24px;
-    margin-bottom: 20px;
-    color: #000000;
+    margin-bottom: 10px;
+    color: #203648;
 }
+
+.add-section {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.input-field {
+    flex: 1;
+    width: 300px;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 20px;
+    font-size: 16px;
+    color: #747474;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    font-family: Malayalam Sangam MN, sans-serif;
+    font-size: 18px;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
 .add-task-text {
     font-family: Malayalam Sangam MN, sans-serif;
     font-size: 20px;
@@ -33,53 +116,53 @@
     color: #2463A9;
 }
 
-/*.add-section {*/
-/*    background-color: #F9FAFC;*/
-/*    border-radius: 20px;*/
-/*}*/
-
-.input-field {
-    width: 300px;
-    height: 30px;
-    padding: 0px 10px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    font-size: 16px;
+.section-divider {
+    width: 500px;
+    height: 2px;
+    background-color: #CBCBCB;
+    margin: 20px 0;
+    border-radius: 10px;
+    border: none;
 }
 
+
+
+.task-goal-container h3 {
+    font-family: Malayalam Sangam MN, sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #203648;
+}
 
 .add-section, .add-goal-section {
-    display: flex;           /* put input + button in a row */
-    align-items: center;     /* vertical alignment */
-    gap: 5px;               /* space between input and button */
-}
-
-.input-field, .input-field2, .input-field3 {
-    flex: 1;                 /* input grows to fill remaining space */
-    height: 40px;            /* same height as button */
-    border-radius: 20px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .plus-button {
     width: 35px;
     height: 35px;
-    border-radius: 50%;       /* perfect circle */
+    border-radius: 50%;
     background-color: #2463A9;
     color: white;
     font-size: 24px;
     border: none;
     cursor: pointer;
-
-    display: flex;            /* center + inside */
-    align-items: center;      /* vertical center */
-    justify-content: center;  /* horizontal center */
-
-    padding: 0 !important;    /* remove default padding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 !important;
     box-sizing: border-box;
 }
+
+.task-goal-container h5 {
+    font-family: Malayalam Sangam MN, sans-serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #203648;
+}
+
 .checkbox {
     width: 20px;
     height: 20px;
@@ -87,36 +170,51 @@
     border-radius: 20px;
 }
 
-h4 {
-    font-family: Malayalam Sangam MN, sans-serif;
-    font-size: 18px;
-    margin: 10px 0;
-    color: #000000;
-}
-
-
-hr {
-    border: none;           /* remove default border */
-    height: 2px;            /* thickness of the line */
-    background-color: #000000; /* color of the line */
-    margin: 20px 0;         /* space above and below */
-}
-
-
 .input-field2 {
+    flex: 1;
     width: 250px;
+    height: 40px;
     padding: 10px;
-    margin-right: 10px;
+    margin-bottom: 5px;
     border: 1px solid #ccc;
+    box-sizing: border-box;
     border-radius: 20px;
     font-size: 16px;
+    color: #747474;
 }
 
 .input-field3 {
-    width: 125px;
+    width: 150px;
+    height: 40px;
     padding: 10px;
-    margin-right: 10px;
+    margin-bottom: 5px;
     border: 1px solid #ccc;
+    box-sizing: border-box;
     border-radius: 20px;
     font-size: 16px;
+    color: #747474;
+}
+
+.goal-item-container {
+    display: flex;
+    width: 400px;
+    height: 30px;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+    justify-content: left;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+.goal-item {
+    display: flex;
+    align-items: center;
+    font-family: Malayalam Sangam MN, sans-serif;
+    font-size: 18px;
+    padding: 5px;
+    gap: 10px;
+    margin-bottom: 15px;
+    text-align: left;
 }
