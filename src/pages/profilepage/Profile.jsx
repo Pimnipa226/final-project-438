@@ -49,14 +49,14 @@ const Profile = ({ user }) => {
         <div className="profile-content">
             {/* User Info */}
             <div className="user-info">
-                <h2>User Information</h2>
-                <p>Email: {user.email}</p>
+                <h2 className="user-info-line">User Information</h2>
+                <p className="email">Email: {user.email}</p>
             </div>
 
             {/* Current goals */}
             <div className="total-goals">
                 <div className="current-goal">
-                    <h1>Current Goals</h1>
+                    <h1>My Current Goals</h1>
                     <div className="goal-list-container">
                     <div className="goal-list">
                         {currentGoal.length > 0 ? (
@@ -79,7 +79,7 @@ const Profile = ({ user }) => {
 
                 {/* Past goals */}
                 <div className="past-goal">
-                    <h2>Past Goals</h2>
+                    <h2>My Past Goals</h2>
                     <div className="goal-list">
 
                         {pastGoal.length > 0 ? (

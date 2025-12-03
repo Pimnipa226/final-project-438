@@ -8,12 +8,46 @@
     min-height: 100vh;
 }
 
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #F9F9FC;
+}
+
 .user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
     margin: 20px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    background-color: #f9f9f9;
+    background-color: white;
+}
+
+.user-info h2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1500px;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 28px;
+    color: #203648;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.email {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    font-family: 'Malayalam Sangam MN', sans-serif;
+    font-size: 18px;
+    color: #203648;
 }
 
 .total-goals {
@@ -33,9 +67,9 @@
 
 .current-goal h1{
     font-family: 'Noto Serif JP', serif;
-    font-size: 36px;
-    color: #203648;
-    margin-bottom: 10px;
+    font-size: 30px;
+    color: #2463A9;
+    margin-bottom: 5px;
 }
 
 .goal-list-container {
@@ -54,6 +88,25 @@
     margin-bottom: 15px;
     text-align: left;
 }
+
+.current-and-past-divider {
+    width: 100%;
+    max-width: 700px;
+    height: 2px;
+    background-color: #CBCBCB;
+    margin: 20px 0;
+    border-radius: 10px;
+    border: none;
+}
+
+
+.past-goal h2{
+    font-family: 'Noto Serif JP', serif;
+    font-size: 30px;
+    color: #2463A9;
+    margin-bottom: 5px;
+}
+
 
 
 

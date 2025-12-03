@@ -22,8 +22,8 @@
 .navbar-links {
     display: flex;
     align-items: center;
-    gap: 1.5rem;      /* space between links */
-    margin-left: auto;/* pushes links to the right */
+    gap: 1.5rem;
+    margin-left: auto;
     font-size: 20px;
     color: #2463A9;
 }
@@ -33,7 +33,7 @@
     display: flex;
     gap: 15px;
     align-items: center;
-    margin-left: auto;   /* <-- pushes menu to the right */
+    margin-left: auto;
 }
 
 .home-button {
@@ -51,6 +51,8 @@
 .home-button:hover {
     color: #1b4d7a;
 }
+
+
 
 .profile-button {
     padding: 6px 12px;
