@@ -153,8 +153,8 @@ function TaskGoalCalendar({ user }) {
 
 
     return (
-        <div className="task-goal-container">
-            <div className="welcome-back-container">
+        <div className="task-goal-container" aria-label="Task and Goal Management">
+            <div className="welcome-back-container" aria-label="Welcome Back">
             <h1>Welcome back!</h1>
             </div>
 
@@ -163,13 +163,14 @@ function TaskGoalCalendar({ user }) {
                 onChange={setSelectedDate}
                 value={selectedDate}
                 tileClassName={tileClassName}
+                aria-label="Calendar to select date for tasks"
             />
 
             {/*<h2>{selectedDate.toDateString()}</h2>*/}
 
             {/* Add tasks */}
             <h4>Task</h4>
-            <div className="add-section">
+            <div className="add-section" aria-label="Add Task Section">
                 <input
                     className="input-field"
                     value={newTask}
@@ -189,7 +190,7 @@ function TaskGoalCalendar({ user }) {
                 <p>No tasks</p>
             ) : (
                 selectedDayTasks.map(t => (
-                    <div key={t.id} className="task-item">
+                    <div key={t.id} className="task-item" aria-label="Task Item">
                         <input
                             className="check-box"
                             type="checkbox"
@@ -207,18 +208,20 @@ function TaskGoalCalendar({ user }) {
 
             {/* Add goals */}
             <h3>Goal</h3>
-            <div className="add-goal-section">
+            <div className="add-goal-section" aria-label="Add Goal Section">
                 <input
                     className="input-field2"
                     value={goalName}
                     placeholder="Add goal..."
                     onChange={e => setGoalName(e.target.value)}
+                    aria-label="Add goal name"
                 />
                 <input
                     className="input-field3"
                     type="date"
                     value={goalDueDate}
                     onChange={e => setGoalDueDate(e.target.value)}
+                    aria-label="Select goal due date"
                 />
                 <button className="plus-button" onClick={saveGoal}>+</button>
             </div>
@@ -228,11 +231,11 @@ function TaskGoalCalendar({ user }) {
                 <p>No current goals</p>
             ) : (
                 currentGoal.map(g => (
-                    <div className="goal-item-container">
-                    <div key={g.id} className="goal-item">
-                        <span>{g.goalInput}</span>
-                        <small>Due: {g.dueDate}</small>
-                    </div>
+                    <div className="goal-item-container" aria-label="Current Goal Item">
+                        <div key={g.id} className="goal-item">
+                            <span>{g.goalInput}</span>
+                            <small>Due: {g.dueDate}</small>
+                        </div>
                     </div>
                 ))
             )}

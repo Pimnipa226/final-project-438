@@ -45,7 +45,7 @@ const SignUp = () => {
             <div className="welcome">
             <h1>Welcome!</h1>
                 <div className="web-app-description">
-                    Goalify is an app designed to help UW students manage their goals more effectively.
+                    Goalify is a web app designed to help UW students manage their goals more effectively.
                     Powered by AI, the app guides students by helping them break big goals into daily actionable tasks, stay organized, and build consistent habits.
                 </div>
             </div>

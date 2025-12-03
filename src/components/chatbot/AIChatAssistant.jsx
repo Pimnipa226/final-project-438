@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { GoogleGenAI } from "@google/genai";
-import { z } from "zod";
-import { zodToJsonSchema } from "zod-to-json-schema";
+// import { z } from "zod";
+// import { zodToJsonSchema } from "zod-to-json-schema";
 
 //import arrowUp from '../assets/arrow-up.webp';
 import './AIChatAssistant.css';
@@ -18,14 +18,14 @@ function AIChatAssistant() {
     //useState(''): initializes input as an empty string
 
 
-    const [callAPI, setCallAPI] = useState(false);
+    //const [callAPI, setCallAPI] = useState(false);
     //default state is false
 
     function cleanResponse(text = "") {
         return text
-            .replace(/[*#_`>-]/g, "")       // remove markdown symbols
-            .replace(/(\d+\.)/g, "\n$1")    // add newline before every number list like "1." "2." etc.
-            .replace(/\n{2,}/g, "\n")       // remove extra blank lines
+            .replace(/[*#_`>-]/g, "")
+            .replace(/(\d+\.)/g, "\n$1")
+            .replace(/\n{2,}/g, "\n")
             .trim();
     }
         const callGemini = async () => {
@@ -44,10 +44,6 @@ function AIChatAssistant() {
 
                 let myDiv = document.getElementById("responseTextID");
                 myDiv.innerHTML = response.text;
-
-                // console.log(response.text);
-                // let myDiv = document.getElementById('responseTextID');
-                // myDiv.innerHTML = response.text;
             }
 
             catch (error) {
@@ -55,17 +51,16 @@ function AIChatAssistant() {
             }
         }
 
-// SHOW RESPONSE IN CHAT WINDOW LATER
 
 
     return (
-        <div className="chat-placeholder">
+        <div className="chat-placeholder" aria-label="AI Chat Assistant Section">
             <p className="chat-with-assistant">Chat with AI Assistant</p>
             <div id="responseTextID">{/* chat messages */}</div>
-            <div className="input-message">
+            <div className="input-message" aria-label="Input Message">
             <input className="chat-input" type="text" onChange={(e) => setInput(e.target.value)} value={input} placeholder="Type your message..." />
             {/*<button className="send-button" onClick={onClick}><img src={arrowUp} alt="send"/></button>*/}
-            <button className="send-button" onClick={callGemini}>Send</button>
+            <button className="send-button" aria-label="send button" onClick={callGemini}>Send</button>
             </div>
         </div>
     );

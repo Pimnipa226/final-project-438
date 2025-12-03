@@ -46,16 +46,16 @@ const Profile = ({ user }) => {
 
     // Render profile page
     return (
-        <div className="profile-content">
+        <div className="profile-content" aria-label="User Profile Page">
             {/* User Info */}
-            <div className="user-info">
+            <div className="user-info" aria-label="User Information Section">
                 <h2 className="user-info-line">User Information</h2>
                 <p className="email">Email: {user.email}</p>
             </div>
 
             {/* Current goals */}
-            <div className="total-goals">
-                <div className="current-goal">
+            <div className="total-goals" aria-label="User Goals Records Section">
+                <div className="current-goal" aria-label="Current Goal Information">
                     <h1>My Current Goals</h1>
                     <div className="goal-list-container">
                     <div className="goal-list">
@@ -78,7 +78,7 @@ const Profile = ({ user }) => {
                 <hr className="current-and-past-divider" />
 
                 {/* Past goals */}
-                <div className="past-goal">
+                <div className="past-goal" aria-label="Past Goal Information">
                     <h2>My Past Goals</h2>
                     <div className="goal-list">
 
