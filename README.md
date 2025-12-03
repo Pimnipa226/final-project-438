@@ -1,14 +1,13 @@
 # Goalify
 
-Goalify is an app designed to help students manage their goals more effectively. 
-The app guides students by helping them break big goals into daily actionable tasks, 
-stay organized, and build consistent habits. Moreover, the app provides personalized 
-recommendations, progress tracking, and reminders to keep students motivated throughout the quarter.
+Project Link: https://goalify-e2043.web.app/
 
-### Features
+
+Goalify is a web app designed to help students manage their goals more effectively. 
+The app guides students by helping them break big goals into daily actionable tasks, 
+stay organized, and build consistent habits. 
+
 - Goal breakdown into daily tasks by AI assistant
-- Daily reminders for each day tasks
-- Tracking progress
 
 
 ## Getting Started
