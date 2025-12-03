@@ -1,6 +1,140 @@
 .sign-up-content {
+    display: flex;
     font-family: 'Noto Serif JP', sans-serif;
-    font-size: 20px;
-    background-color: #F9F9FC;
+    font-size: 30px;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: #72BFB8;
+    min-height: 100vh;
+    width: 100%;
+    padding: 60px;
+    box-sizing: border-box;
 }
 
+.welcome h1 {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Noto Serif JP', sans-serif;
+    font-size: 55px;
+    color: #203648 ;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    padding: 40px 0px;
+    text-align: left;
+}
+
+.web-app-description {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    font-family: 'Malayalam Sangam MN', sans-serif;
+    font-size: 20px;
+    flex-wrap: wrap;
+    align-content: start;
+    text-align: left;
+    color: #203648;
+}
+
+.auth-form-container {
+    height: 550px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Noto Serif JP', sans-serif;
+    font-size: 18px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 350px;
+}
+
+
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-content: start;
+    text-align: left;
+}
+
+.sign-up-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+
+.sign-up-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    width: 90px;
+    height: 40px;
+    font-size: 1rem;
+    background: #2463A9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.auth-button:hover:not(:disabled) {
+    background-color: #1B4D79;
+}
+
+.auth-button:disabled {
+    background-color: #a0a0a0;
+    cursor: not-allowed;
+}
+
+.auth-link {
+    display: flex;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-content: start;
+    text-align: left;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.auth-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #666;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.auth-link a {
+    color: #2463A9;
+    text-decoration: none;
+}
+
+.auth-link a:hover {
+    color: #1B4D79;
+    text-decoration: none;
+}

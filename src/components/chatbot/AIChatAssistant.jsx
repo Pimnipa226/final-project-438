@@ -6,11 +6,11 @@ import { z } from "zod";
 import { zodToJsonSchema } from "zod-to-json-schema";
 
 //import arrowUp from '../assets/arrow-up.webp';
-import './ChatBot.css';
+import './AIChatAssistant.css';
 
 const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GOOGLE_API_KEY });
 console.log("Loaded API Key:", import.meta.env.VITE_GOOGLE_API_KEY);
-function ChatBot() {
+function AIChatAssistant() {
 
     const [input, setInput] = useState('');
     //input: stores whatever the user types
@@ -59,7 +59,7 @@ function ChatBot() {
 
 
     return (
-        <div className="chatbot-placeholder">
+        <div className="chat-placeholder">
             <p className="chat-with-assistant">Chat with AI Assistant</p>
             <div id="responseTextID">{/* chat messages */}</div>
             <div className="input-message">
@@ -71,7 +71,7 @@ function ChatBot() {
     );
 }
 
-export default ChatBot;
+export default AIChatAssistant;
 
 
 

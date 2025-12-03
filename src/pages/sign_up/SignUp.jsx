@@ -42,27 +42,18 @@ const SignUp = () => {
     return (
         <div>
         <div className="sign-up-content">
+            <div className="welcome">
             <h1>Welcome!</h1>
-            <p className="web-app-description">
-                Goalify is an app designed to help UW students manage their goals more effectively.
-                Powered by AI, Goalify guides students by helping them break big goals into daily actionable tasks, stay organized, and build consistent habits.
-                The app provides personalized recommendations, progress tracking, and reminders to keep students motivated throughout the quarter.
-            </p>
+                <div className="web-app-description">
+                    Goalify is an app designed to help UW students manage their goals more effectively.
+                    Powered by AI, the app guides students by helping them break big goals into daily actionable tasks, stay organized, and build consistent habits.
+                </div>
+            </div>
             <div className="auth-form-container">
                 <h2>Create Account</h2>
                 {/*{error && <div className="auth-error">{error}</div>}*/}
 
                 <form onSubmit={handleSignUp} className="auth-form">
-                    <div className="form-group">
-                        <label htmlFor="username">Username</label>
-                        <input
-                            type="username"
-                            id="username"
-                            value={username}
-                            onChange={(e) => setUsername(e.target.value)}
-                            required
-                        />
-                    </div>
 
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
@@ -97,15 +88,17 @@ const SignUp = () => {
                         />
                     </div>
 
-                    <button className="submit-sign-up-button"
-                        type="submit"
-                        className="auth-button"
-                        // disabled={loading}
-                    >
-                        {loading ? "Creating account..." : "Sign Up"}
-                    </button>
-                    <p>Already have Goalify account?</p>
+                    <div className="sign-up-button-container">
+                        <button className="sign-up-button"
+                            type="submit"
+                        >
+                            Sign Up
+                        </button>
+                    </div>
+                    <div className="auth-link">
+                    Already have Goalify account?&nbsp;
                     <Link to="/log-in">Log In</Link>
+                    </div>
                 </form>
 
                 {/*<div className="auth-link">*/}

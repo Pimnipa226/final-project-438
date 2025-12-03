@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "../../components/navbar/NavBar.jsx";
 import TaskGoalList from "../../components/task_goal_list/TaskGoalList.jsx";
-import ChatBot from "../../components/chatbot/ChatBot.jsx";
+import AIChatAssistant from "../../components/chatbot/AIChatAssistant.jsx";
 import "./Home.css"
 
 
@@ -14,7 +14,7 @@ const Home = ( {user} ) => {
                 </div>
 
                 <div className="chat-section">
-                    <ChatBot />
+                    <AIChatAssistant />
                 </div>
             </div>
         </div>
