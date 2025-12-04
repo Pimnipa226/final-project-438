@@ -5,6 +5,7 @@ import { auth } from "../../services/firebase.js";
 import { signOut } from "firebase/auth";
 
 function NavBar ({user}) {
+    // Logs the user out of Firebase when the sign-out button is clicked
     const handleSignOut = () => {
         signOut(auth);
     };
