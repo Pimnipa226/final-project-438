@@ -1,5 +1,4 @@
 import React from "react";
-import NavBar from "../../components/navbar/NavBar.jsx";
 import TaskGoalList from "../../components/task_goal_list/TaskGoalList.jsx";
 import AIChatAssistant from "../../components/chatbot/AIChatAssistant.jsx";
 import "./Home.css"

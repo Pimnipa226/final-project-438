@@ -37,13 +37,13 @@ const Login = () => {
                         Powered by AI, the app guides students by helping them break big goals into daily actionable tasks, stay organized, and build consistent habits.
                 </div>
             </div>
-            <div className="auth-form-container">
+            <div className="auth-form-container" aria-label="log in section">
                 <h2>Log In</h2>
                 {/*Display error message if any*/}
                 {error && <div className="auth-error">{error}</div>}
                 {/*Submit form for login*/}
                 <form onSubmit={handleSignIn} className="auth-form">
-                    <div className="form-group">
+                    <div className="form-group" aria-label="enter email">
                         <label htmlFor="email">Email</label>
                         <input className="email-input-field"
                             type="email"
@@ -54,7 +54,7 @@ const Login = () => {
                         />
                     </div>
 
-                    <div className="form-group">
+                    <div className="form-group" aria-label="enter password">
                         <label htmlFor="password">Password</label>
                         <input className="password-input-field"
                             type="password"
@@ -65,7 +65,7 @@ const Login = () => {
                         />
                     </div>
 
-                    <div className="log-in-button-container">
+                    <div className="log-in-button-container" aria-label="log in button">
                     <button
                         type="submit"
                         className="auth-button"
@@ -75,7 +75,7 @@ const Login = () => {
                     </div>
                 </form>
 
-                <div className="auth-link">
+                <div className="auth-link" aria-label="sign up link">
                     Don't have Goalify account?&nbsp;
                     <Link to="/sign-up">Sign Up</Link>
                 </div>

@@ -11,11 +11,11 @@ function NavBar ({user}) {
 
     return (
         <nav className="navbar">
-            <div className="navbar-brand">
+            <div className="navbar-brand" aria-label="app name">
                 <p>Goalify</p>
             </div>
             {/*Nav Bar contains Home, profile, and sign out buttons*/}
-            <div className="navbar-menu">
+            <div className="navbar-menu" aria-label="navbar menu">
                 <Link to="/">
                     <button className="home-button">Home</button>
                 </Link>

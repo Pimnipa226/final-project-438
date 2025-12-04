@@ -6,14 +6,6 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../services/firebase.js';
 
 
-// const SignUp = () => {
-//     return (
-//         <div className="sign-up">
-//             <p>Sign up here!</p>
-//         </div>
-//     )
-// };
-
 const SignUp = () => {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
@@ -23,6 +15,7 @@ const SignUp = () => {
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
+    // Handles the sign-up form submission.
     const handleSignUp = async (e) => {
         e.preventDefault();
         // Validate password match
@@ -41,21 +34,21 @@ const SignUp = () => {
 
     return (
         <div>
-        <div className="sign-up-content">
-            <div className="welcome">
+        <div className="sign-up-content" aria-label="sign-up-page">
+            <div className="welcome" aria-label="welcome-section">
             <h1>Welcome!</h1>
-                <div className="web-app-description">
+                <div className="web-app-description" aria-label="Web App description">
                     Goalify is a web app designed to help UW students manage their goals more effectively.
                     Powered by AI, the app guides students by helping them break big goals into daily actionable tasks, stay organized, and build consistent habits.
                 </div>
             </div>
-            <div className="auth-form-container">
+            <div className="auth-form-container" aria-label="sign up section">
                 <h2>Create Account</h2>
                 {/*{error && <div className="auth-error">{error}</div>}*/}
 
                 <form onSubmit={handleSignUp} className="auth-form">
 
-                    <div className="form-group">
+                    <div className="form-group" aria-label="enter email">
                         <label htmlFor="email">Email</label>
                         <input
                             type="email"
@@ -66,7 +59,7 @@ const SignUp = () => {
                         />
                     </div>
 
-                    <div className="form-group">
+                    <div className="form-group" aria-label="enter password">
                         <label htmlFor="password">Password</label>
                         <input
                             type="password"
@@ -77,7 +70,7 @@ const SignUp = () => {
                         />
                     </div>
 
-                    <div className="form-group">
+                    <div className="form-group" aria-label="enter confirm password">
                         <label htmlFor="confirmPassword">Confirm Password</label>
                         <input
                             type="password"
@@ -88,14 +81,14 @@ const SignUp = () => {
                         />
                     </div>
 
-                    <div className="sign-up-button-container">
+                    <div className="sign-up-button-container" aria-label="sign up button">
                         <button className="sign-up-button"
                             type="submit"
                         >
                             Sign Up
                         </button>
                     </div>
-                    <div className="auth-link">
+                    <div className="auth-link" aria-label="log in link">
                     Already have Goalify account?&nbsp;
                     <Link to="/log-in">Log In</Link>
                     </div>

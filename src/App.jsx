@@ -18,17 +18,12 @@ function App() {
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
-            // if (!currentUser) {
-            //     navigate('/log-in');
-            // }
         });
         return () => unSubscribe();
     }, [navigate]);
 
     return (
-        // <Router><div className="app">
-        //     <Navbar />
-        //     <main className="main-content">
+
         <div>
             <NavBar user={user} />
                 <Routes>
@@ -38,7 +33,6 @@ function App() {
                     <Route path="/profile" element={user ? <Profile user={user}/> : <Login />} />
                 </Routes>
         </div>
-        // </Router>
     );
 }
 

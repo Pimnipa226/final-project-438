@@ -1,25 +1,13 @@
-//Call API
 import React, { useState } from 'react';
-import { useEffect } from 'react';
 import { GoogleGenAI } from "@google/genai";
-// import { z } from "zod";
-// import { zodToJsonSchema } from "zod-to-json-schema";
-
-//import arrowUp from '../assets/arrow-up.webp';
 import './AIChatAssistant.css';
 
 const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GOOGLE_API_KEY });
 console.log("Loaded API Key:", import.meta.env.VITE_GOOGLE_API_KEY);
 function AIChatAssistant() {
 
+    // Stores the text the user types into the chat input box
     const [input, setInput] = useState('');
-    //input: stores whatever the user types
-    //setInput(): updates input when the user types
-    //useState(''): initializes input as an empty string
-
-
-    //const [callAPI, setCallAPI] = useState(false);
-    //default state is false
 
     function cleanResponse(text = "") {
         return text
@@ -38,10 +26,6 @@ function AIChatAssistant() {
                 });
                 console.log("Raw response:", response.text);
 
-
-
-                //const cleaned = cleanResponse(response.text);
-
                 let myDiv = document.getElementById("responseTextID");
                 myDiv.innerHTML = response.text;
             }
@@ -59,7 +43,6 @@ function AIChatAssistant() {
             <div id="responseTextID">{/* chat messages */}</div>
             <div className="input-message" aria-label="Input Message">
             <input className="chat-input" type="text" onChange={(e) => setInput(e.target.value)} value={input} placeholder="Type your message..." />
-            {/*<button className="send-button" onClick={onClick}><img src={arrowUp} alt="send"/></button>*/}
             <button className="send-button" aria-label="send button" onClick={callGemini}>Send</button>
             </div>
         </div>
