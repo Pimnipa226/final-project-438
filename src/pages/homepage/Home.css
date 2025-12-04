@@ -17,7 +17,7 @@
     box-sizing: border-box;
 }
 
-/* make boxes auto-size instead of fixed heights */
+
 .tasks-section {
     width: 800px;
     background-color: #FFFFFF;
@@ -31,11 +31,11 @@
     border: 2px solid #E5E5E5;
     border-radius: 8px;
     padding: 1rem;
-    height: 500px;   /* make it taller */
-    overflow-y: auto; /* scroll when messages overflow */
+    height: 500px;
+    overflow-y: auto;
 }
 
-/* mobile responsive layout */
+
 @media (max-width: 900px) {
     .home-main {
         flex-direction: column;
