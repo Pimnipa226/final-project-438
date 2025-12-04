@@ -43,4 +43,18 @@ stay organized, and build consistent habits.
 - Add reminders and progress tracking
 - Improve UI design
 
+## AI use statement
+I used AI to help generate code snippets and debug issues during development.
+Mainly I used ChatGPT to help with the adding task portion of my TaskGoalList.jsx React component structure, and responsive CSS styling.
+- I prompted ChatGPT to help me save task data to Firebase and retrieve it for display in the user interface. 
+- I also ask it to generate CSS for some of my element like the input fields to make them responsive to size of the screen and customize the React calendar to match my app color palette.
 
+
+## Personal reflection
+Throughout the process of building this project, I gained knowledge and hands-on experience especially in areas that were completely new to me like JavaScript and Firebase. 
+When integrating AI features with user authentication and real-time database management allowed me to explore how different technologies work together to create a user experience. 
+Working with JavaScript, HTML, and CSS strengthened my understanding of front-end development while using Firebase helped me learn how modern web apps handle data, security, and user information.
+I also get to practice working on different APIs and cloud-based tools and put those into a single application. 
+Although it was challenging at times, it pushed me to research, troubleshoot, and think more critically. Seeing the project evolve from an idea to a working application gave me a better appreciation
+for the development cycle and the amount of detail required to make an app both useful and user-friendly. Overall, this project strengthened my understanding of full-stack concepts and inspired me 
+to continue learning and building more intuitive applications in the future.
