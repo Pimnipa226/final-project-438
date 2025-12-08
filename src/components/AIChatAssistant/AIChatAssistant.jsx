@@ -3,7 +3,7 @@ import { GoogleGenAI } from "@google/genai";
 import './AIChatAssistant.css';
 
 const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GOOGLE_API_KEY });
-console.log("Loaded API Key:", import.meta.env.VITE_GOOGLE_API_KEY);
+// console.log("Loaded API Key:", import.meta.env.VITE_GOOGLE_API_KEY);
 function AIChatAssistant() {
 
     // Stores the text the user types into the chat input box
