@@ -3,13 +3,13 @@ import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyB3iQLT-hQ7Fw8DgCyxo65ZISA7DjyZANY",
-    authDomain: "goalify-e2043.firebaseapp.com",
-    projectId: "goalify-e2043",
-    storageBucket: "goalify-e2043.firebasestorage.app",
-    messagingSenderId: "1003307506744",
-    appId: "1:1003307506744:web:d861603315e535496f5acd",
-    measurementId: "G-PRENFQQMVJ"
+    apiKey: "AIzaSyBL-YQ8YmeSQuGTehWRUIwiPxy0oQprAII",              // ← changed
+    authDomain: "goalify-ea70e.firebaseapp.com",                     // ← changed
+    projectId: "goalify-ea70e",                                      // ← changed
+    storageBucket: "goalify-ea70e.firebasestorage.app",              // ← changed
+    messagingSenderId: "8816315204",                                 // ← changed
+    appId: "1:8816315204:web:bff87901994e10e87ea511",                // ← changed
+    measurementId: "G-5BV87D59SD"                                    // ← changed
 };
 
 const app = initializeApp(firebaseConfig);

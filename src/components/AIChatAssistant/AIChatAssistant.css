@@ -57,3 +57,33 @@
         justify-content: center;
     }
 }
+
+
+#responseTextID {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 0;
+}
+
+.user-msg {
+    align-self: flex-end;
+    background-color: #4a7dfc;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 16px 16px 4px 16px;
+    max-width: 75%;
+    margin: 4px 0;
+    white-space: pre-wrap;
+}
+
+.ai-msg {
+    align-self: flex-start;
+    background-color: #f0f0f0;
+    color: #1a1a1a;
+    padding: 8px 14px;
+    border-radius: 16px 16px 16px 4px;
+    max-width: 75%;
+    margin: 4px 0;
+    white-space: pre-wrap;
+}
