@@ -258,3 +258,10 @@
         width: 100%;
     }
 }
+
+.task-goal-select {
+    padding: 0.4rem 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #d7dbe2;
+    font-size: 0.85rem;
+}
