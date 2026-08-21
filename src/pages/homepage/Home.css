@@ -48,3 +48,10 @@
         max-width: 600px;
     }
 }
+
+
+.quick-goal-calendar-wrap { display: flex; flex-direction: column; gap: 0.4rem; }
+.quick-goal-calendar { border: none; border-radius: 12px; box-shadow: 0 1px 2px rgba(28,35,51,0.06); font-family: inherit; width: 100%; }
+.quick-goal-today-tile { background: #eef1fd !important; border-radius: 8px; }
+.quick-goal-timeframe { font-size: 0.82rem; color: #6b7280; margin: 0; }
+.quick-goal-actions { display: flex; gap: 0.5rem; }

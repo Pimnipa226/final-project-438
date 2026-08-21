@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./sign-up.css";
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { auth } from '../../services/firebase.js';
 
 
@@ -23,85 +23,104 @@ const SignUp = () => {
             setError("Passwords do not match");
             return;
         }
+        setLoading(true);
         try {
-            await createUserWithEmailAndPassword(auth, email, password);
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            // Save the entered name to the Firebase Auth profile so it's
+            // available as user.displayName everywhere else in the app.
+            if (username.trim()) {
+                await updateProfile(userCredential.user, { displayName: username.trim() });
+            }
             navigate("/log-in");
         } catch (err) {
             setError(err.message);
+        } finally {
+            setLoading(false);
         }
     }
 
 
     return (
         <div>
-        <div className="sign-up-content" aria-label="sign-up-page">
-            <div className="welcome" aria-label="welcome-section">
-            <h1>Welcome!</h1>
-                <div className="web-app-description" aria-label="Web App description">
-                    Goalify is a web app designed to help UW students manage their goals more effectively.
-                    Powered by AI, the app guides students by helping them break big goals into daily actionable tasks, stay organized, and build consistent habits.
+            <div className="sign-up-content" aria-label="sign-up-page">
+                <div className="welcome" aria-label="welcome-section">
+                    <h1>Welcome!</h1>
+                    <div className="web-app-description" aria-label="Web App description">
+                        Goalify is a web app designed to help UW students manage their goals more effectively.
+                        Powered by AI, the app guides students by helping them break big goals into daily actionable tasks, stay organized, and build consistent habits.
+                    </div>
+                </div>
+                <div className="auth-form-container" aria-label="sign up section">
+                    <h2>Create Account</h2>
+                    {/*{error && <div className="auth-error">{error}</div>}*/}
+
+                    <form onSubmit={handleSignUp} className="auth-form">
+
+                        <div className="form-group" aria-label="enter name">
+                            <label htmlFor="username">Name</label>
+                            <input
+                                type="text"
+                                id="username"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                                required
+                            />
+                        </div>
+
+                        <div className="form-group" aria-label="enter email">
+                            <label htmlFor="email">Email</label>
+                            <input
+                                type="email"
+                                id="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                            />
+                        </div>
+
+                        <div className="form-group" aria-label="enter password">
+                            <label htmlFor="password">Password</label>
+                            <input
+                                type="password"
+                                id="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                            />
+                        </div>
+
+                        <div className="form-group" aria-label="enter confirm password">
+                            <label htmlFor="confirmPassword">Confirm Password</label>
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                value={confirmPassword}
+                                onChange={(e) => setConfirmPassword(e.target.value)}
+                                required
+                            />
+                        </div>
+
+                        <div className="sign-up-button-container" aria-label="sign up button">
+                            <button className="sign-up-button"
+                                    type="submit"
+                                    disabled={loading}
+                            >
+                                {loading ? "Creating account..." : "Sign Up"}
+                            </button>
+                        </div>
+                        <div className="auth-link" aria-label="log in link">
+                            Already have Goalify account?&nbsp;
+                            <Link to="/log-in">Log In</Link>
+                        </div>
+                    </form>
+
+                    {/*<div className="auth-link">*/}
+                    {/*    Already have an account? <Link to="/login">Log In</Link>*/}
+                    {/*</div>*/}
                 </div>
             </div>
-            <div className="auth-form-container" aria-label="sign up section">
-                <h2>Create Account</h2>
-                {/*{error && <div className="auth-error">{error}</div>}*/}
-
-                <form onSubmit={handleSignUp} className="auth-form">
-
-                    <div className="form-group" aria-label="enter email">
-                        <label htmlFor="email">Email</label>
-                        <input
-                            type="email"
-                            id="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            required
-                        />
-                    </div>
-
-                    <div className="form-group" aria-label="enter password">
-                        <label htmlFor="password">Password</label>
-                        <input
-                            type="password"
-                            id="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            required
-                        />
-                    </div>
-
-                    <div className="form-group" aria-label="enter confirm password">
-                        <label htmlFor="confirmPassword">Confirm Password</label>
-                        <input
-                            type="password"
-                            id="confirmPassword"
-                            value={confirmPassword}
-                            onChange={(e) => setConfirmPassword(e.target.value)}
-                            required
-                        />
-                    </div>
-
-                    <div className="sign-up-button-container" aria-label="sign up button">
-                        <button className="sign-up-button"
-                            type="submit"
-                        >
-                            Sign Up
-                        </button>
-                    </div>
-                    <div className="auth-link" aria-label="log in link">
-                    Already have Goalify account?&nbsp;
-                    <Link to="/log-in">Log In</Link>
-                    </div>
-                </form>
-
-                {/*<div className="auth-link">*/}
-                {/*    Already have an account? <Link to="/login">Log In</Link>*/}
-                {/*</div>*/}
-            </div>
-        </div>
         </div>
     );
 };
 
 export default SignUp;
-

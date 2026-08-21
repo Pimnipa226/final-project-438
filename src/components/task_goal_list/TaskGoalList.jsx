@@ -23,7 +23,7 @@ function todayDateString() {
 
 const DEFAULT_TARGET_DAYS = 30;
 
-function TaskGoalCalendar({ user }) {
+function TaskGoalList({ user }) {
     const [selectedDate, setSelectedDate] = useState(new Date());
 
     // Task input
@@ -234,10 +234,6 @@ function TaskGoalCalendar({ user }) {
 
     return (
         <div className="task-goal-container" aria-label="Task and Goal Management">
-            <div className="welcome-back-container" aria-label="Welcome Back">
-                <h1>Welcome back!</h1>
-            </div>
-
             <Calendar
                 className="calendar-styling"
                 onChange={setSelectedDate}
@@ -411,4 +407,4 @@ function TaskGoalCalendar({ user }) {
     );
 }
 
-export default TaskGoalCalendar;
+export default TaskGoalList;
